@@ -8,6 +8,8 @@ components:
       env:
         - name: QUARKUS_HTTP_HOST
           value: 0.0.0.0
+        - name: VSCODE_DEFAULT_WORKSPACE
+          value: /projects/quarkus-kafka/quarkus.code-workspace
       endpoints:
         - exposure: none
           name: debug
@@ -21,6 +23,8 @@ components:
       volumeMounts:
         - name: m2
           path: /home/user/.m2
+        - name: ssh
+          path: /home/user/.ssh
       memoryLimit: 4G
       mountSources: true
   - name: m2
