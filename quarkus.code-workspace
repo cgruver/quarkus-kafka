@@ -2,8 +2,10 @@
     "folders": [
         {
             "path": "."
+        },
+        {
+            "path": "../kubedock"
         }
-        
     ],
     "extensions": {
         "recommendations": [
