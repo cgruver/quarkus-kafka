@@ -65,3 +65,14 @@ Use SmallRye Reactive Messaging
 Easily start your Reactive RESTful Web Services
 
 [Related guide section...](https://quarkus.io/guides/getting-started-reactive#reactive-jax-rs-resources)
+
+
+## Kubedock
+
+ENV VARS
+
+```bash
+export TESTCONTAINERS_RYUK_DISABLED=true 
+export TESTCONTAINERS_CHECKS_DISABLE=true 
+export DOCKER_HOST=tcp://127.0.0.1:2475
+export JAVA_HOME=/usr/lib/jvm/jre-17-openjdk
