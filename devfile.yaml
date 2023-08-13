@@ -3,6 +3,8 @@ metadata:
   name: quarkus-kafka
 components:
   - name: tools
+    attributes:
+      pod-overrides: {"metadata": {"annotations": {"io.kubernetes.cri-o.Devices":"/dev/fuse","io.openshift.podman-fuse":""}}}
     container:
       image: quay.io/cgruver0/che/che-dev-image:fuse
       env:
