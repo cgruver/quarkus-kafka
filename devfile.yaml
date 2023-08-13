@@ -4,7 +4,7 @@ metadata:
 components:
   - name: tools
     container:
-      image: registry.redhat.io/devspaces/udi-rhel8:3.7 
+      image: quay.io/cgruver0/che/che-dev-image:fuse
       env:
         - name: QUARKUS_HTTP_HOST
           value: 0.0.0.0
