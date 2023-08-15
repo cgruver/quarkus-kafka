@@ -4,7 +4,7 @@ metadata:
 components:
   - name: tools
     attributes:
-      pod-overrides: {"metadata": {"annotations": {"io.kubernetes.cri-o.Devices":"/dev/fuse","io.openshift.podman-fuse":""}}}
+      pod-overrides: {"metadata": {"annotations": {"io.kubernetes.cri-o.Devices":"/dev/fuse,/dev/net/tun","io.openshift.podman-fuse":""}}}
     container:
       image: quay.io/cgruver0/che/che-dev-image:fuse
       env:
@@ -12,6 +12,12 @@ components:
           value: 0.0.0.0
         - name: VSCODE_DEFAULT_WORKSPACE
           value: /projects/quarkus-kafka/quarkus.code-workspace
+        - name: TESTCONTAINERS_RYUK_DISABLED
+          value: "true"
+        - name: TESTCONTAINERS_CHECKS_DISABLE
+          value: "true"
+        - name: DOCKER_HOST
+          value: "unix:///tmp/podman.sock"
       endpoints:
         - exposure: none
           name: debug
